@@ -19,5 +19,7 @@ const config = withMetroConfig(getDefaultConfig(__dirname), {
 });
 
 module.exports = withStorybook(config, {
+  // Keep this relative: Storybook uses it to generate portable Metro contexts.
   configPath: './.rnstorybook',
+  websockets: 'auto',
 });

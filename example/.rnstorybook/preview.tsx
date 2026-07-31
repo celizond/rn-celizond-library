@@ -12,6 +12,12 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
+    layout: 'centered',
+    options: {
+      storySort: {
+        method: 'alphabetical',
+      },
+    },
   },
 };
 
