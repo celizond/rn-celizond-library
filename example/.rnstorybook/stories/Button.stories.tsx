@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
 });
 
 const meta = {
-  title: 'Components/Button',
+  title: 'UI/Button',
   component: Button,
   decorators: [
     (Story) => (
