@@ -11,6 +11,19 @@ export type {
 } from './components/PressableButton';
 export { TextButton } from './components/TextButton';
 export type { TextButtonProps } from './components/TextButton';
+export { TextLink } from './components/TextLink';
+export type { TextLinkProps } from './components/TextLink';
+export {
+  TextVariant,
+  textColorTokens,
+  textVariantTokens,
+} from './components/TextVariant';
+export type {
+  TextVariantAlign,
+  TextVariantColor,
+  TextVariantName,
+  TextVariantProps,
+} from './components/TextVariant';
 export { Card } from './components/Card';
 export type { CardProps } from './components/Card';
 export { Input } from './components/Input';

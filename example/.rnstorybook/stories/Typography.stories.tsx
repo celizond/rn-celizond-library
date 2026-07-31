@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
 });
 
 const meta = {
-  title: 'UI/Typography',
+  title: 'UI/Texts/Typography',
   component: Typography,
   decorators: [
     (Story) => (
