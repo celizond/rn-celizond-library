@@ -4,6 +4,13 @@ export type {
   ButtonSize,
   ButtonVariant,
 } from './components/Button';
+export { PressableButton } from './components/PressableButton';
+export type {
+  PressableButtonProps,
+  PressableButtonVariant,
+} from './components/PressableButton';
+export { TextButton } from './components/TextButton';
+export type { TextButtonProps } from './components/TextButton';
 export { Card } from './components/Card';
 export type { CardProps } from './components/Card';
 export { Input } from './components/Input';
