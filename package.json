@@ -69,6 +69,7 @@
     "@eslint/compat": "^2.1.0",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^9.39.4",
+    "@expo/vector-icons": "^15.0.2",
     "@jest/globals": "^29.7.0",
     "@react-native/babel-preset": "0.81.5",
     "@react-native/eslint-config": "0.85.0",
@@ -96,6 +97,7 @@
     "typescript": "^6.0.3"
   },
   "peerDependencies": {
+    "@expo/vector-icons": ">=14",
     "expo-haptics": ">=14",
     "react": "*",
     "react-native": "*"

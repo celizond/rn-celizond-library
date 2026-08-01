@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import * as Clipboard from 'expo-clipboard';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { STORY_ARGS_UPDATED } from 'storybook/internal/core-events';
@@ -61,7 +61,11 @@ function serializeProp(name: string, value: unknown): string | undefined {
   return `${name}={${JSON.stringify(value)}}`;
 }
 
-function createCode(componentName: string, args: Record<string, unknown>) {
+function createCode(
+  componentName: string,
+  args: Record<string, unknown>,
+  callbacks: Record<string, string>
+) {
   const children =
     typeof args.children === 'string' ? args.children : undefined;
   const props = Object.entries(args)
@@ -71,6 +75,12 @@ function createCode(componentName: string, args: Record<string, unknown>) {
 
   if (componentName === 'AddNote' && !('onNoteAdded' in args)) {
     props.push("onNoteAdded={(note) => console.log('Nota agregada', note)}");
+  }
+
+  for (const [name, callback] of Object.entries(callbacks)) {
+    if (!(name in args)) {
+      props.push(`${name}={${callback}}`);
+    }
   }
 
   const propsCode = props.length > 0 ? `\n  ${props.join('\n  ')}\n` : '';
@@ -107,10 +117,9 @@ export function CodePanel({ active, api }: CodePanelProps) {
   }, [store, story?.args, storyId]);
 
   const componentName = story?.title?.split('/').at(-1) ?? 'Component';
-  const code = useMemo(
-    () => createCode(componentName, args),
-    [args, componentName]
-  );
+  const codeParameters = story?.parameters?.code as
+    { callbacks?: Record<string, string> } | undefined;
+  const code = createCode(componentName, args, codeParameters?.callbacks ?? {});
 
   const copyCode = async () => {
     await Clipboard.setStringAsync(code);

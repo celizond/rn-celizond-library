@@ -38,7 +38,11 @@ const annotations = [
 ];
 
 globalThis.STORIES = normalizedStories;
-
+globalThis.STORYBOOK_WEBSOCKET = {
+  host: '100.110.124.124',
+  port: 7007,
+  secured: false,
+};
 
 module?.hot?.accept?.();
 
