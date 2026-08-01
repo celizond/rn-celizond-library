@@ -5,6 +5,7 @@ const main: StorybookConfig = {
   deviceAddons: [
     '@storybook/addon-ondevice-controls',
     '@storybook/addon-ondevice-actions',
+    './code-addon',
   ],
 };
 

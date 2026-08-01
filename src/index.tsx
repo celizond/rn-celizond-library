@@ -4,6 +4,8 @@ export type {
   ButtonSize,
   ButtonVariant,
 } from './components/Button';
+export { AddNote } from './components/AddNote';
+export type { AddNoteProps, Note } from './components/AddNote';
 export { PressableButton } from './components/PressableButton';
 export type {
   PressableButtonProps,

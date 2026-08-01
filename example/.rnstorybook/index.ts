@@ -11,7 +11,7 @@ import { view } from './storybook.requires';
  * with application decorators/providers (theme, i18n, state, navigation, etc).
  */
 const StorybookUIRoot = view.getStorybookUI({
-  initialSelection: 'ui-buttons-button--primary',
+  initialSelection: 'components-addnote--playground',
   onDeviceUI: true,
   shouldPersistSelection: true,
   theme,

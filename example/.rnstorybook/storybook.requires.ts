@@ -5,6 +5,7 @@ import { start, updateView, View, type Features } from '@storybook/react-native'
 
 import "@storybook/addon-ondevice-controls/register";
 import "@storybook/addon-ondevice-actions/register";
+import "./code-addon/register";
 
 const normalizedStories = [
   {
@@ -37,11 +38,7 @@ const annotations = [
 ];
 
 globalThis.STORIES = normalizedStories;
-globalThis.STORYBOOK_WEBSOCKET = {
-  host: '100.110.124.124',
-  port: 7007,
-  secured: false,
-};
+
 
 module?.hot?.accept?.();
 
